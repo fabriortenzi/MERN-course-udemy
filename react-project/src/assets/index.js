@@ -1,18 +1,16 @@
-import { ReactComponent as LogoWhite } from './svg/tincode-white.svg';
+import LogoWhite from './svg/tincode-white.svg';
 import authBg from './jpg/auth-bg.jpg';
-import homeBanner from './jpg/home-banner.jpg'
-import noAvatar from './jpg/no-avatar.jpg'
-import academyLogo from './png/academy-logo.png'
+import homeBanner from './jpg/home-banner.jpg';
+import noAvatar from './jpg/no-avatar.jpg';
+import academyLogo from './png/academy-logo.png';
 
-const Icon = {
+export const Icon = {
   LogoWhite,
 };
 
-const Image = {
+export const Image = {
   authBg,
   homeBanner,
   noAvatar,
-  academyLogo
+  academyLogo,
 };
-
-
