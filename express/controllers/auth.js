@@ -11,7 +11,7 @@ export async function register(req, res) {
     const { firstName, lastName, email, password } = req.body;
 
     if (!email) res.status(400).send({ msg: 'Email required' });
-
+    
     const saltRounds = 10;
     const salt = bcrypt.genSaltSync(saltRounds);
     const hash = bcrypt.hashSync(password, salt);
@@ -23,10 +23,10 @@ export async function register(req, res) {
       password: hash,
       active: false,
     }).then((user) => {
-      res.status(200).send({ msg: user });
+      return res.status(200).send({ msg: user });
     });
   } catch (error) {
-    res.status(400).send({ msg: 'An error has ocurred' });
+    return res.status(400).send({ msg: 'An error has ocurred', err: error });
   }
 }
 
@@ -37,7 +37,7 @@ export async function login(req, res) {
     if (!email) res.status(400).send({ msg: 'Email required' });
     if (!password) res.status(400).send({ msg: 'Password required' });
 
-    const lowerCaseEmail = email.toLowerCase();    
+    const lowerCaseEmail = email.toLowerCase();
     const query = UserModel.where({ email: lowerCaseEmail });
     const user = await query.findOne();
 
@@ -52,7 +52,7 @@ export async function login(req, res) {
       res.status(500).send({ msg: 'Internal Server error' });
     }
   } catch {
-    res.status(500).send({ msg: 'Server error' });
+    res.status(500).send({ msg: 'Internal Server error' });
   }
 }
 
