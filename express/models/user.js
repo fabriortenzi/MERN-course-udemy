@@ -8,7 +8,7 @@ const UserSchema = new mongoose.Schema({
     unique: true
   },
   password: String,
-  rol: String,
+  role: String,
   active: Boolean,
   avatar: String
 });
