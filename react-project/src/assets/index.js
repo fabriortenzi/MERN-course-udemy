@@ -1,16 +1,7 @@
-import LogoWhite from './svg/tincode-white.svg';
-import authBg from './jpg/auth-bg.jpg';
-import homeBanner from './jpg/home-banner.jpg';
-import noAvatar from './jpg/no-avatar.jpg';
-import academyLogo from './png/academy-logo.png';
-
-export const Icon = {
-  LogoWhite,
+const IMAGES = {
+  authBg: new URL('./jpg/auth-bg.jpg', import.meta.url).href,
+  homeBanner: new URL('./jpg/home-banner.jpg', import.meta.url).href,
+  noAvatar: new URL('./jpg/no-avatar.jpg', import.meta.url).href,
 };
 
-export const Image = {
-  authBg,
-  homeBanner,
-  noAvatar,
-  academyLogo,
-};
+export default IMAGES;

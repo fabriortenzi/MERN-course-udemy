@@ -10,7 +10,6 @@ export function AdminMenu() {
     user: { role },
   } = useAuth();
   const isAdmin = role === 'admin';
-  console.log(isAdmin);
 
   const isCurrentPath = (path) => {
     return path === pathname;
