@@ -8,7 +8,7 @@ import './RegisterForm.scss';
 const authController = new Auth();
 
 export function RegisterForm(props) {
-  const {openLogin} = props
+  const { openLogin } = props;
   const [error, setError] = useState('');
 
   const formik = useFormik({
@@ -19,7 +19,7 @@ export function RegisterForm(props) {
       try {
         setError('');
         await authController.register(formValue);
-        openLogin()
+        openLogin();
       } catch (error) {
         setError('Error en el Servidor');
       }

@@ -25,7 +25,7 @@ export async function getMenus(req, res) {
 export async function createMenu(req, res) {
   try {
     await MenuModel.create(req.body).then((menu) => {
-      return res.status(200).send({ msg: 'Menu created', body: menu });
+      return res.status(201).send({ msg: 'Menu created', body: menu });
     });
   } catch {
     return res.status(500).send({ msg: 'Error when creating Menu' });
